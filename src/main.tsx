@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React, { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'antd/dist/antd.css';
@@ -7,10 +7,10 @@ import { HashRouter as Router } from 'react-router-dom'
 
 
 ReactDOM.render(
-  <StrictMode> 
-    <Router>
-        <App/>
-    </Router>
-  </StrictMode>,
+  <Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <App/>
+    </Suspense>
+  </Router>,
   document.getElementById('root')
 );

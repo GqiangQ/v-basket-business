@@ -16,13 +16,13 @@ export default class Home extends React.Component {
   state = {
     collapsed: false,
   };
-
-  onCollapse = collapsed => {
+  onCollapse = (collapsed:any) => {
     console.log(collapsed);
     this.setState({ collapsed });
   };
 
   render() {
+    console.log(this.props)
     const { collapsed } = this.state;
     return (
       <Layout style={{ minHeight: '100vh' }}>
